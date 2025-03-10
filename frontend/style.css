@@ -1,0 +1,83 @@
+body {
+    background-color: black;
+    color: #00ff00;
+    font-family: monospace;
+    margin: 0;
+    padding: 20px;
+}
+
+h1, h2, h3 {
+    color: #00ff00;
+}
+
+h4 {
+    color: #ffcc00;
+}
+
+a {
+    color: #00ff00;
+    text-decoration: none;
+    margin-right: 10px;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    background-color: black;
+    color: #00ff00;
+    border: 1px solid #00ff00;
+    padding: 5px;
+    margin-bottom: 10px;
+    font-family: monospace;
+}
+
+button {
+    background-color: #00ff00;
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    font-family: monospace;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #00cc00;
+}
+
+.vaga {
+    width: 50px;
+    height: 100px;
+    margin: 5px;
+    display: inline-block;
+    text-align: center;
+    line-height: 100px;
+}
+
+.vaga-comum {
+    border: 3px solid #00cc00; /* Borda amarela para vagas preferenciais */
+}
+
+.vaga-preferencial {
+    border: 3px solid #ffcc00; /* Borda amarela para vagas preferenciais */
+}
+
+.ocupada {
+    background-color: #006400;
+    color: black;
+}
+
+.bloco-container {
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 20px;
+}
+
+.vagas-bloco {
+    border: 1px solid #00ff00;
+    padding: 10px;
+}
