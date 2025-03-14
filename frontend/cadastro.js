@@ -23,4 +23,4 @@ document.getElementById('cadastroForm').addEventListener('submit', function(even
             alert(data.message);
         }
     });
-});
+}); 

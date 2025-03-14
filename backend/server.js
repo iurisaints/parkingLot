@@ -128,4 +128,33 @@ app.delete('/vagas/:vagaId/desocupar', (req, res) => {
     });
 });
 
+//editar cadastro
+app.put('/editar/:id', (req, res) => {
+    const { id } = req.params;
+    const { username, email, password, placa, cor, modelo } = req.body;
+    let query = 'UPDATE users SET username = ?, email = ?, placa = ?, cor = ?, modelo = ? WHERE id = ?';
+    let values = [username, email, placa, cor, modelo, id];
+
+    // Se a senha for alterada, adiciona a atualização da senha
+    if (password) {
+        query = 'UPDATE users SET username = ?, email = ?, password = ?, placa = ?, cor = ?, modelo = ? WHERE id = ?';
+        values = [username, email, password, placa, cor, modelo, id];
+    }
+
+    connection.query(query, values, (err, result) => {
+        if (err) {
+            return res.status(500).json({ success: false, message: 'Erro ao atualizar usuário' });
+        }
+
+        // Retorna os dados atualizados
+        connection.query('SELECT * FROM users WHERE id = ?', [id], (err, results) => {
+            if (err) {
+                return res.status(500).json({ success: false, message: 'Erro ao buscar usuário atualizado' });
+            }
+            res.json({ success: true, message: 'Cadastro atualizado com sucesso!', user: results[0] });
+        });
+    });
+});
+
+
 app.listen(port, () => console.log(`Servidor rodando na porta ${port}`));

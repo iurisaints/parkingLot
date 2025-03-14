@@ -70,3 +70,12 @@ fetch('http://localhost:3030/vagas')
         alert(data.message);
     }
 });
+
+document.getElementById('editarCadastro').addEventListener('click', function () {
+    window.location.href = 'editar.html';
+});
+
+document.getElementById('logout').addEventListener('click', function() {
+    localStorage.removeItem('user'); // Remove os dados do usuário
+    window.location.href = 'login.html'; // Redireciona para a tela de login
+});

@@ -24,6 +24,17 @@ a:hover {
     text-decoration: underline;
 }
 
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.buttons-container {
+    display: flex;
+    gap: 10px;
+}
+
 
 input[type="text"],
 input[type="email"],
